@@ -122,6 +122,20 @@ public class PlayerMove : MonoBehaviour
         {
             Die();
         }
+
+        if (collision.gameObject.CompareTag("Brick"))
+        {
+            // 마리오가 아래에서 위로 들이받았는지 확인 (충돌 방향 벡터 검사)
+            if (collision.contacts[0].normal.y < -0.5f)
+            {
+                // 부딪힌 벽돌 컴포넌트를 가져와서 Hit() 실행!
+                Brick brick = collision.gameObject.GetComponent<Brick>();
+                if (brick != null)
+                {
+                    brick.Hit();
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

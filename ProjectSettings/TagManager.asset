@@ -8,6 +8,8 @@ TagManager:
   - Monster
   - LuckyBlock
   - DeathZone
+  - Flag
+  - Brick
   layers:
   - Default
   - TransparentFX
